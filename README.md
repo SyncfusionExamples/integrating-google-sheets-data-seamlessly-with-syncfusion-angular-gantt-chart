@@ -1,27 +1,61 @@
-# SyncfusionAngularApp
+# Syncfusion Angular Gantt Chart with Google Sheets
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.2.16.
+A sample Angular app that loads task data from a public Google Sheet CSV and renders it in a Syncfusion Angular Gantt chart.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This app fetches CSV from Google Sheets, parses it with `papaparse`, and displays tasks using `@syncfusion/ej2-angular-gantt`. It maps sheet columns to task fields and supports start date, duration, and progress.
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Requirements: Node.js 18+ and Angular CLI.
 
-## Build
+Install and run:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install
+npm start
+```
 
-## Running unit tests
+Open `http://localhost:4200/`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Google Sheets
 
-## Running end-to-end tests
+The sheet ID is set in `src/app/app.component.ts`:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```ts
+private SHEET_ID = '1RvJOMnnV0YNcVHqdTF7ux17bIobec18aJ17Nbiiup1U';
+```
 
-## Further help
+Required headers:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `Task ID`
+- `Task Name`
+- `Start Date`
+- `Duration`
+- `Progress`
+
+Header mapping:
+
+- `TaskID` from `Task ID`
+- `TaskName` from `Task Name`
+- `StartDate` from `Start Date`
+- `Duration` from `Duration`
+- `Progress` from `Progress`
+
+## Notes
+
+- The sheet must be publicly accessible via CSV export.
+- Update `mapSheetDataToGanttData()` if headers differ.
+- Syncfusion Material theme styles are imported in `src/styles.css`.
+
+## Scripts and dependencies
+
+Use `npm start`, `npm build`, or `npm test`.
+
+Key dependencies:
+
+- `@angular/core`
+- `@syncfusion/ej2-angular-gantt`
+- `papaparse`
+- `@syncfusion/ej2-material-theme`
