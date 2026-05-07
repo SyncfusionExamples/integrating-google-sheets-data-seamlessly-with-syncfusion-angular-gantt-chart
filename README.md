@@ -1,27 +1,44 @@
-# SyncfusionAngularApp
+# Syncfusion Angular Gantt Chart with Google Sheets
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.2.16.
+## Repository Description
+This repository contains an Angular application that demonstrates loading task data from a public Google Sheets CSV file and rendering it in a Syncfusion Angular Gantt Chart with mapped task fields.
 
-## Development server
+## Overview
+This sample fetches CSV data from a Google Sheets document, parses it using the `papaparse` library, and binds the processed data to the `@syncfusion/ej2-angular-gantt` component. It showcases how spreadsheet data can be mapped to Gantt fields such as task ID, name, start date, duration, and progress.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- Load external data from Google Sheets (CSV format)
+- Parse CSV data using PapaParse
+- Bind data dynamically to Syncfusion Angular Gantt
+- Map spreadsheet columns to Gantt task fields
+- Display scheduling information including duration and progress
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+- Node.js (LTS version recommended)
+- Angular CLI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation & Run
 
-## Running unit tests
+```bash
+npm install
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Open `http://localhost:4200/`.
 
-## Running end-to-end tests
+## Google Sheets
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The sheet ID is set in `src/app/app.component.ts`:
 
-## Further help
+```ts
+private SHEET_ID = '1RvJOMnnV0YNcVHqdTF7ux17bIobec18aJ17Nbiiup1U';
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Notes
+
+- The sheet must be publicly accessible via CSV export.
+- Update `mapSheetDataToGanttData()` if headers differ.
+- Syncfusion Material theme styles are imported in `src/styles.css`.

@@ -50,10 +50,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "syncfusion-angular-app:build:production"
+              "buildTarget": "syncfusion-angular-app:build:production"
             },
             "development": {
-              "browserTarget": "syncfusion-angular-app:build:development"
+              "buildTarget": "syncfusion-angular-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -61,7 +61,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "syncfusion-angular-app:build"
+            "buildTarget": "syncfusion-angular-app:build"
           }
         },
         "test": {
