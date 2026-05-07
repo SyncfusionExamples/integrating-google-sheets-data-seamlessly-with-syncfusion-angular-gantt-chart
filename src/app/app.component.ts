@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { GanttModule } from '@syncfusion/ej2-angular-gantt';
 import * as Papa from 'papaparse';
 
 @Component({
   selector: 'app-root',
+  imports: [GanttModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

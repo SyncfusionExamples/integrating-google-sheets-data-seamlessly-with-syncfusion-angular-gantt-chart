@@ -6,14 +6,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    GanttModule
+    GanttModule,
+    AppComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
